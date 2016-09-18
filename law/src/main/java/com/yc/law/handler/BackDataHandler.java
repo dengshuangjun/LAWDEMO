@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.law.entity.AddContent;
 import com.yc.law.entity.EasyType;
 import com.yc.law.entity.LawContentPage;
 import com.yc.law.entity.Type;
@@ -185,5 +186,9 @@ public class BackDataHandler {
 		list.add(0,et1);
 		return list;
 	}
-	 
+	@RequestMapping("addWavsNews")
+	@ResponseBody
+	public boolean addWavsNews(AddContent addContent){
+		return backDataService.addWavsNews(addContent);
+	}
 }

@@ -2,6 +2,7 @@ package com.yc.law.service;
 
 import java.util.List;
 
+import com.yc.law.entity.AddContent;
 import com.yc.law.entity.EasyType;
 import com.yc.law.entity.LawContentPage;
 import com.yc.law.entity.Type;
@@ -35,5 +36,7 @@ public interface BackDataService {
 	boolean changeNewsStatus(String status, int nid);
 
 	List<EasyType> getNewsTypeName();
+
+	boolean addWavsNews(AddContent addContent);
 
 }

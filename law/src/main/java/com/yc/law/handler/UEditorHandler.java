@@ -39,7 +39,7 @@ public class UEditorHandler {
 				try {
 					FileUtils.copyInputStreamToFile(upfile.getInputStream(), new File(realPath, picName));
 					String original = upfile.getOriginalFilename();//原名字
-					ImageData imageData=new ImageData(original.substring(0,original.indexOf(".")),picName,picName,upfile.getSize(),original.substring(original.indexOf(".")+1),"SUCCESS");
+					ImageData imageData=new ImageData(original.substring(0,original.indexOf(".")),original.substring(0,original.indexOf(".")),picName,upfile.getSize(),original.substring(original.indexOf(".")+1),"SUCCESS");
 					return imageData;
 				} catch (IOException e) {
 					return null;

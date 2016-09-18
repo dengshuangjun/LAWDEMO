@@ -22,7 +22,10 @@
 					<option value='N'>否</option>
 				</select>
 	</div>
+	<p style="color: red;width:1024px;margin: 0 auto;padding:10px;">注意：以上都为必选或必填，否则不能添加或者提示添加失败...</p>
+	<div>
 	<script id="wavesEditor" type="text/plain" style="width:1024px;height:500px;text-align: center; margin: 20px auto;"></script>
+	</div>
 	<p style="text-align: center;">
 	<input type="button" id="submitWavesBtn" value="提交上传"/><input type="button" id="resetWavesBtn" value="重置"/>
 	</p> 
@@ -56,7 +59,7 @@
 	</div>
 	<!----------------- 搜索模块end ----------------->
 <script type="text/javascript">
- 
+var ue=UE.getEditor('wavesEditor');//实例化编辑器
 //显示模块开始---------------------------------------
 var partid="1001,1002,1003";
 var wavesObj;
@@ -178,21 +181,35 @@ $('.wavesNtname').combobox({
 //显示模块end--------------------------------------------	
 //打开添加面板
 function addWavsNews(){
-		var ue=UE.getEditor('wavesEditor');
 		$('#waves_data_add').dialog({title:"添加",closed:false,modal:true,});
-		//绑定提交按钮
-		$('#submitWavesBtn').bind('click', function(){  
-		        alert('easyui'); 
-		        alert( ue.getContent());
-		        var wavesNtnameAdd=$('#wavesNtnameAdd').combobox('getValue');
-		        var wavesPartNameAdd=$('#wavesPartNameAdd').combobox('getValue');
-		        var wavesTitleAdd=$('#wavesTitleAdd').textbox('getValue');
-		        var wavesAuthorAdd=$('#wavesAuthorAdd').textbox('getValue');
-		        var wavesAuthorAdd=$('#WavesWeightAdd').numberspinner('getValue');
-		        var wavesFlagAdd=$('#wavesFlagAdd').combobox('getValue');
-		        alert(wavesNtnameAdd+wavesPartNameAdd+wavesTitleAdd+wavesAuthorAdd+wavesFlagAdd);
-		}); 
+		
 }
+//绑定提交按钮
+$('#submitWavesBtn').bind('click', function(){  
+        
+        var wavesNtnameAdd=$('#wavesNtnameAdd').combobox('getValue');
+        var wavesPartNameAdd=$('#wavesPartNameAdd').combobox('getValue');
+        var wavesTitleAdd=$('#wavesTitleAdd').textbox('getValue');
+        var wavesAuthorAdd=$('#wavesAuthorAdd').textbox('getValue');
+        var WavesWeightAdd=$('#WavesWeightAdd').numberspinner('getValue');
+        var wavesFlagAdd=$('#wavesFlagAdd').combobox('getValue');
+        if(wavesNtnameAdd==''||wavesPartNameAdd==''||wavesTitleAdd==''||wavesAuthorAdd==''||WavesWeightAdd==''||wavesFlagAdd==''){
+        	$.messager.alert('提示信息','您填入的信息不合法或者填写不完整...','error');
+        	return;
+        }
+        $.post("backs/addWavsNews",{usid:$("#usid").val(),author:wavesAuthorAdd,flag:wavesFlagAdd,weight:WavesWeightAdd,content:ue.getContent(),nitid:wavesNtnameAdd,partid:wavesPartNameAdd,title:wavesTitleAdd},function(data){
+        	if(data){
+        		$.messager.show({
+        			title:'成功提示',
+        			msg:'添加成功',
+        			timeout:3000,
+        			showType:'slide'
+        		});
+        	}else{
+        		$.messager.alert('错误信息','上传出错，请重新上传...','error');
+        	}
+        },"json");
+}); 
 //更新权重
 function setWavesWeight(nid,val,weight,partid){
 	if(val==1){//置顶

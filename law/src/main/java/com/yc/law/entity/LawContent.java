@@ -3,7 +3,11 @@ package com.yc.law.entity;
 import java.io.Serializable;
 
 import org.springframework.web.multipart.MultipartFile;
-
+/**
+ * 这是一个用来查询法律内容的类
+ * @author shuang
+ *
+ */
 public class LawContent implements Serializable{
 	private static final long serialVersionUID = 669124896184909264L;
 	private int nid;

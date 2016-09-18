@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.law.entity.AddContent;
 import com.yc.law.entity.EasyType;
 import com.yc.law.entity.LawContentPage;
 import com.yc.law.entity.Type;
@@ -107,6 +108,14 @@ public class BackDataServiceImpl implements BackDataService {
 	public List<EasyType> getNewsTypeName() {
 		
 		return backDataMapper.getNewsTypeName();
+	}
+
+	@Override
+	public boolean addWavsNews(AddContent addContent) {
+		if(backDataMapper.addWavsNews(addContent)==1){
+			return true;
+		}
+		return false;
 	}
 
 

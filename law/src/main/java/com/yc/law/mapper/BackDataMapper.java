@@ -2,6 +2,7 @@ package com.yc.law.mapper;
 
 import java.util.List;
 
+import com.yc.law.entity.AddContent;
 import com.yc.law.entity.EasyType;
 import com.yc.law.entity.LawContentPage;
 import com.yc.law.entity.Type;
@@ -35,5 +36,7 @@ public interface BackDataMapper {
 	int changeNewsStatus(String status, int nid);
 
 	List<EasyType> getNewsTypeName();
+
+	int addWavsNews(AddContent addContent);
 
 }
