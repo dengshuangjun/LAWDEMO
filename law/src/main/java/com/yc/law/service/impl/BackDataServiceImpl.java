@@ -59,7 +59,13 @@ public class BackDataServiceImpl implements BackDataService {
 
 	@Override
 	public int findMaxWeightFromNews(int partid,int nid) {
-		return backDataMapper.findMaxWeightFromNews(partid,nid);
+		try {
+			return backDataMapper.findMaxWeightFromNews(partid,nid);
+
+		} catch (Exception e) {
+			return 0;
+		}
+		
 	}
 
 	@Override

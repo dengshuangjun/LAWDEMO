@@ -83,13 +83,15 @@ public class BackDataHandler {
 		}
 		return false;
 	}
-	@RequestMapping("getWavesByPage")
+	@RequestMapping(value={"getWavesByPage","getartByPage"})
 	@ResponseBody
 	public Map<String,Object> getWavesByPage(LawContentPage lawContentPage){
 		lawContentPage=backDataService.getWavesByPage(lawContentPage);
 		Map<String,Object> map=new HashMap<String, Object>();
-		map.put("total", lawContentPage.getTotal());
-		map.put("rows", lawContentPage.getLawContents());
+		if(lawContentPage!=null){
+			map.put("total", lawContentPage.getTotal());
+			map.put("rows", lawContentPage.getLawContents());
+		}
 		return map;
 	}
 	/**
@@ -186,7 +188,7 @@ public class BackDataHandler {
 		list.add(0,et1);
 		return list;
 	}
-	@RequestMapping("addWavsNews")
+	@RequestMapping(value={"addWavsNews","addArtNews"})
 	@ResponseBody
 	public boolean addWavsNews(AddContent addContent){
 		return backDataService.addWavsNews(addContent);

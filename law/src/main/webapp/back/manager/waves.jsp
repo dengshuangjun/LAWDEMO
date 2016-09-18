@@ -91,7 +91,7 @@ wavesObj=$('#waves_data').datagrid({
 	    	}	
 		},
 		{field:'partName',title:'所属版块',width:180,align:'center'},
-		{field:'title',title:'标题',width:250,align:'center'},
+		{field:'title',title:'标题',width:350,align:'center'},
 		{field:'ndate',title:'修改时间',sortable:true,width:400,align:'center'},
 		{field:'weight',title:'文章权重',width:300,align:'center',sortable:true,
 			formatter: function(value,row,index){
@@ -102,39 +102,8 @@ wavesObj=$('#waves_data').datagrid({
 				return str; 
 			}	
 		},
-		{field:'picpath',title:'图片数量',width:180,align:'center',
-			formatter: function(value,row,index){
-				if (value!=undefined&&value!=""){
-					var str="";
-					var pics=value.split(",");
-					return pics.length;
-				} else {
-					return 0;
-				}
-			}	
-		},
-		{field:'vediopath',title:'视频数量',width:180,align:'center',
-			formatter: function(value,row,index){
-				if (value!=undefined&&value!=""){
-					var str="";
-					var pics=value.split(",");
-					return pics.length;
-				} else {
-					return 0;
-				}
-			}	
-		},
-		{field:'voicepath',title:'音频数量',width:180,align:'center',
-			formatter: function(value,row,index){
-				if (value!=undefined&&value!=""){
-					var str="";
-					var pics=value.split(",");
-					return pics.length;
-				} else {
-					return 0;
-				}
-			}	
-		},
+		
+		
 		{field:'views',title:'浏览次数',sortable:true,width:180,align:'center'},
 		{field:'author',title:'作者来源',width:200,align:'center'},
 		{field:'flag',title:'非注册可见',width:200,align:'center',
@@ -144,14 +113,6 @@ wavesObj=$('#waves_data').datagrid({
 				}else if(rowData.status == "N"){
 					return '<select><option onclick="changeNewsFlag('+'\'N\','+rowData.nid+')">否</option><option onclick="changeNewsFlag('+'\'Y\','+rowData.nid+')">是</option></select>';
 				}
-	    	}	
-		},
-		{field:'news_file',title:'有无附件',width:200,align:'center',
-			formatter:function(value,rowData,index){
-	    		if(value!=undefined&&value!=""){
-	    			return "有";
-	    		}
-	    		return "无";
 	    	}	
 		},
 		{field:'usname',title:'上传者',width:200,align:'center'},
@@ -181,7 +142,7 @@ $('.wavesNtname').combobox({
 //显示模块end--------------------------------------------	
 //打开添加面板
 function addWavsNews(){
-		$('#waves_data_add').dialog({title:"添加",closed:false,modal:true,});
+			$('#waves_data_add').dialog({title:"添加",closed:false,modal:true,});
 		
 }
 //绑定提交按钮
@@ -205,6 +166,10 @@ $('#submitWavesBtn').bind('click', function(){
         			timeout:3000,
         			showType:'slide'
         		});
+        		$('#waves_data').datagrid({
+        			url:'backs/getWavesByPage',
+        			queryParams: { partid: partid }});
+        		
         	}else{
         		$.messager.alert('错误信息','上传出错，请重新上传...','error');
         	}
