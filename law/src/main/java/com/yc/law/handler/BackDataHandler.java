@@ -29,8 +29,14 @@ public class BackDataHandler {
 	public Map<String,Object> getTypeByPage(TypePage typePage){
 		typePage=backDataService.getTypeByPage(typePage);
 		Map<String,Object> map=new HashMap<String, Object>();
-		map.put("total", typePage.getTotal());
-		map.put("rows", typePage.getTypeList());
+		if(typePage==null){
+			map.put("total", 0);
+			map.put("rows", null);
+		}else{
+			map.put("total", typePage.getTotal());
+			map.put("rows", typePage.getTypeList());
+		}
+		
 		return map;
 	}
 	@RequestMapping("addTypes")
@@ -67,7 +73,7 @@ public class BackDataHandler {
 	}
 	@RequestMapping("/updateType")
 	@ResponseBody
-	public boolean updateType(Type type){//Type [ntid=1025, ntname=民事, status=N, usid=1002, usname=admin, note=]
+	public boolean updateType(Type type){
 		return backDataService.updateType(type);
 	}
 	/**
@@ -86,7 +92,6 @@ public class BackDataHandler {
 	@RequestMapping(value={"getWavesByPage"})
 	@ResponseBody
 	public Map<String,Object> getWavesByPage(LawContentPage lawContentPage){
-		System.out.println(lawContentPage);
 		lawContentPage=backDataService.getWavesByPage(lawContentPage);
 		Map<String,Object> map=new HashMap<String, Object>();
 		if(lawContentPage!=null){
