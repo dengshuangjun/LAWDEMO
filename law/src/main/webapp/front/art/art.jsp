@@ -114,72 +114,7 @@
 			<div class="right">
 				<div class="head"></div>
 				<div class="news" id="newsContent">
-					<div class="special">
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
 					
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
-					<div>
-						<a href="javascript:showMore(1024)"><img title="点击播放详情"
-							src="../../../pics//147046909158628934.jpg" /></a>
-						<p>测试测试嘛</p>
-					</div>
 				</div>
 				<div class="pageDiv">
 					<div class="tcdPageCode"></div>
@@ -235,5 +170,8 @@
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/time.js"></script>
 	<script type="text/javascript" src="../js/readDevCss.js"></script>
+	<script type="text/javascript">
+		
+	</script>
 </body>
 </html>
