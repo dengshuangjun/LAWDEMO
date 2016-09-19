@@ -54,16 +54,23 @@ public class BackDataServiceImpl implements BackDataService {
 
 	@Override
 	public LawContentPage getWavesByPage(LawContentPage lawContentPage) {
+		System.out.println(lawContentPage);
+
+		List<Integer> result = lawContentPage.getPartid();
+		if(result!=null&&result.get(0)==-1){
+			lawContentPage.setPartid(null);
+		}
+		System.out.println(lawContentPage);
 		return backDataMapper.getWavesByPage(lawContentPage);
 	}
 
 	@Override
-	public int findMaxWeightFromNews(int partid,int nid) {
+	public Integer findMaxWeightFromNews(int partid,int nid) {
 		try {
 			return backDataMapper.findMaxWeightFromNews(partid,nid);
 
 		} catch (Exception e) {
-			return 0;
+			return null;
 		}
 		
 	}

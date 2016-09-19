@@ -65,11 +65,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 <select id="getWavesByPage" parameterType="LawContentPage" resultMap="LawContentPageMap">
 		select ${page} page,${rows} rowss,(select count(1) from news) total,nn.* from 
 		(select rownum rn ,a.* from
-		(select n.partid,p.partname,n.nid,n.title,to_char(n.ndate,'yyyy-MM-dd hh24:mm:ss') ndate,n.weight,n.picpath,n.vediopath,n.voicepath,n.views,n.author,n.flag,n.news_file,n.status,l.usname,nt.ntname 
+		(select partid,partname,nid,title,to_char(ndate,'yyyy-MM-dd hh24:mm:ss') ndate,weight,picpath,vediopath,voicepath,views,author,flag,news_file,status,usname,ntname from 
+		(select n.nitid,n.partid,p.partname,n.nid,n.title,ndate,n.weight,n.picpath,n.vediopath,n.voicepath,n.views,n.author,n.flag,n.news_file,n.status,l.usname,nt.ntname 
 		from part p right join news n on p.partid=n.partid 
         left join law_user l on l.usid=n.usid 
-        left join newsType nt on nt.ntid=n.nitid order by ndate desc,ndate asc)a where #{page}*#{rows}>=rownum and partid in 
-        <foreach collection="partid" open="(" close=")" separator="," item="partid">#{partid}</foreach>) nn where rn>(#{page}-1)*#{rows}
+        left join newsType nt on nt.ntid=n.nitid 
+        <trim prefixOverrides="where" suffixOverrides="and" prefix="where">
+        	<if test="time1!=null">
+        		ndate>to_date(#{time1},'yyyy-MM-dd') and 
+        	</if>
+        	<if test="time2!=null">
+        		to_date(#{time2},'yyyy-MM-dd') >ndate and
+        	</if>
+        	<if test="title!=null">
+        		title like concat(concat('%', #{title}), '%') and 
+        	</if>
+        	<if test="nitid!=null">
+        		nitid=#{nitid}
+        	</if>
+        </trim>
+        )order by ndate desc,ndate asc)a where #{page}*#{rows}>=rownum
+        <if test="partid!=null">
+         and partid in 
+        <foreach collection="partid" open="(" close=")" separator="," item="partid">#{partid}</foreach></if>) nn where rn>(#{page}-1)*#{rows}
+		
 	</select>
 	
 	<select id="findMaxWeightFromNews" parameterType="int" resultType="int">

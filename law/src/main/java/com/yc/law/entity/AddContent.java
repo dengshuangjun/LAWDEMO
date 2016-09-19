@@ -24,6 +24,9 @@ public class AddContent implements Serializable{
 		return nitid;
 	}
 	public void setNitid(int nitid) {
+		if(nitid<0){
+			nitid=0;
+		}
 		this.nitid = nitid;
 	}
 	public int getPartid() {
