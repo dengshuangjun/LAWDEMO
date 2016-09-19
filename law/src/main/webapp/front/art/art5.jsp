@@ -23,13 +23,21 @@
 </head>
 
 <body>
+<input id="partId" type="hidden" value="1008"/>
 	<div id="top">
 		<div id="top_page">
 			<span style="">今天是<span id="nowtime"></span></span>
 			<ul>
-				<li><a href="../load.html">登录</a>| <a href="../submit.html">注册</a>| <a
-					href="../UserCenter.jsp">会员中心</a>| <a
-					href="###">收藏本站</a>| <a href="###">关于我们</a></li>
+				<li>
+				<c:if test="${fuser.usid!=null&&fuser.usid!=''}">
+						<a>欢迎您</a>: <a>${fuser.usname }</a>|
+						<a href="javascript:void(0)" onclick="zhuxiao()">注销</a>|
+				</c:if> 
+				<c:if test="${fuser.usid==null||fuser.usid==''}">
+						<li><a href="load.html">登录</a>| <a href="submit.html">免费注册</a>|
+				</c:if> 
+					<a href="UserCenter.jsp">会员中心</a>| <a href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -118,21 +126,10 @@
 			</div>
 			<div class="right">
 				<div class="head"></div>
-				<div class="newss">
+				<div class="new">
 					<span>法治小说</span>
-					<ul id="newsContent">
-						<li class="lii"><b style="display: block;">法制视频测试4</b>
-							<p>的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v</p>
-							<a href="javascript:showMore(1119)">更多>></a></li>
-						<li class="lii"><b style="display: block;">法制视频测试4</b>
-							<p>的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v</p>
-							<a href="javascript:showMore(1119)">更多>></a></li>
-						<li class="lii"><b style="display: block;">法制视频测试4</b>
-							<p>的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v</p>
-							<a href="javascript:showMore(1119)">更多>></a></li>
-						<li class="lii"><b style="display: block;">法制视频测试4</b>
-							<p>的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v的萨芬斯蒂芬v</p>
-							<a href="javascript:showMore(1119)">更多>></a></li>
+					<ul>
+					
 					</ul>
 				</div>
 				<div class="pageDiv">

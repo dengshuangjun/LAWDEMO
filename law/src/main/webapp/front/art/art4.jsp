@@ -20,13 +20,22 @@
 </head>
 
 <body>
+<input id="partId" type="hidden" value="1007"/>
+<input id="usname" type="hidden" value="${fuser.usid}"/>
 	<div id="top">
 		<div id="top_page">
 			<span style="">今天是<span id="nowtime"></span></span>
 			<ul>
-				<li><a href="../load.html">登录</a>| <a href="../submit.html">注册</a>| <a
-					href="../UserCenter.jsp">会员中心</a>| <a
-					href="###">收藏本站</a>| <a href="###">关于我们</a></li>
+				<li>
+				<c:if test="${fuser.usid!=null&&fuser.usid!=''}">
+						<a>欢迎您</a>: <a>${fuser.usname }</a>|
+						<a href="javascript:void(0)" onclick="zhuxiao()">注销</a>|
+				</c:if> 
+				<c:if test="${fuser.usid==null||fuser.usid==''}">
+						<li><a href="load.html">登录</a>| <a href="submit.html">免费注册</a>|
+				</c:if> 
+					<a href="UserCenter.jsp">会员中心</a>| <a href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -115,22 +124,10 @@
 			</div>
 			<div class="right">
 				<div class="head"></div>
-				<div class="news" id="newsContent">
-					<div  class="special">
-							<a href="javascript:showMore(1112)"><img
-								title="点击查看详情" src="../../../pics/147089490767420268.jpg" /></a>
-							<p>法制视频测试4</p>
-						</div>
-				<div>
-							<a href="javascript:showMore(1112)"><img
-								title="点击查看详情" src="../../../pics/147089490767420268.jpg" /></a>
-							<p>法制视频测试4</p>
-						</div>
-				<div>
-							<a href="javascript:showMore(1112)"><img
-								title="点击查看详情" src="../../../pics/147089490767420268.jpg" /></a>
-							<p>法制视频测试4</p>
-						</div>
+				<div class="new" id="newsContent">
+					<ul>
+						
+					</ul>
 				</div>
 				<div class="pageDiv">
 					<div class="tcdPageCode"></div>

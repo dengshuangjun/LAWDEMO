@@ -91,6 +91,9 @@
 	</div>
 	<!----------------- 搜索模块end ----------------->
 <script type="text/javascript">
+if (typeof wavesUe != 'undefined') {  
+	wavesUe.destroy();  
+}
 var wavesUe=UE.getEditor('wavesEditor');//实例化编辑器
 //显示模块开始---------------------------------------
 var partid;

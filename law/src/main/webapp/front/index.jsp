@@ -23,7 +23,7 @@
 				<li>
 				<c:if test="${fuser.usid!=null&&fuser.usid!=''}">
 						<a>欢迎您</a>: <a>${fuser.usname }</a>|
-						<button onclick="zhuxiao()">注销</button>|
+						<a href="javascript:void(0)" onclick="zhuxiao()">注销</a>|
 				</c:if> 
 				<c:if test="${fuser.usid==null||fuser.usid==''}">
 						<li><a href="load.html">登录</a>| <a href="submit.html">免费注册</a>|
