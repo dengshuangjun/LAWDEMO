@@ -10,10 +10,18 @@
 </div>
 
 <script type="text/javascript">
+	if(typeof upUe != 'undefined'){
+		upUe.destroy();
+	}
 	//实例化编辑器
-	var upUe=null;
+	var upUe=UE.getEditor('changeUsinfo', {
+	    /*  autoHeightEnabled: true,
+	     autoFloatEnabled: true */
+	     wordCount:false,
+	     elementPathEnabled:false,
+	});
+	
 	$(function(){
-		upUe=UE.getEditor('changeUsinfo');
 		readCurInfo();
 	});
 	 

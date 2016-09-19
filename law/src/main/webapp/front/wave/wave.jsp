@@ -121,18 +121,8 @@
 					<div class="newsbox">
 						<div class="new_left">
 							<ul>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li class="space">此处空一行</li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
-								<li><a href="javascript:newsMore(1150)">生活设施不安全致害学生的侵权案件</a></li>
+								<!-- 这里存查出来的新闻 -->
 							</ul>
-							<p style="text-align: center; margin-top: 10px;">
 							<div class="tcdPageCode"></div>
 						</div>
 						<div class="new_right">
