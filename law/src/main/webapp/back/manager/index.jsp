@@ -69,11 +69,7 @@
 			<div title="模块管理" data-options="iconCls:'icon-ok'"
 				style="padding-left: 10px;">
 				<ul class="easyui-tree">
-					<li>智慧电波</li>
-					<li>智慧艺苑</li>
-					<li>智慧私塾</li>
-					<li>智慧讲堂</li>
-					<li>智慧助手</li>
+					<li>模块内容</li>
 				</ul>
 			</div>
 			<div title="用户管理" data-options="iconCls:'icon-ok'"

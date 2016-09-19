@@ -10,7 +10,7 @@
 		</select>
 		所属版块: 
 		<select id="artPartNameAdd" class="easyui-combobox" panelHeight="auto" style="width:100px">
-			<option value="1004">法治视频</option>
+				<option value="1004">法治视频</option>
 				<option value="1005">法治动漫</option>
 				<option value="1006">法治摄影</option>
 				<option value="1007">法治书画</option>
@@ -29,7 +29,7 @@
 	<script id="artEditor" type="text/plain" style="width:1024px;height:500px;text-align: center; margin: 20px auto;"></script>
 	</div>
 	<p style="text-align: center;">
-	<input type="button" id="submitartBtn" value="提交上传"/><input type="button" id="resetartBtn" value="重置"/>
+	<input type="button" id="submitArtBtn" value="提交上传"/><input type="button" id="resetArtBtn" value="重置"/>
 	</p> 
 </div>  
 <!-- -------- 添加模块end------ -->
@@ -52,25 +52,25 @@
 				<option value="1008">法治小说</option>
 			</select>
 			按标题：<input id="artTitle" class="easyui-textbox" type="text" name="title" />
-			<a href="javascript:void(0)" onclick="searchartAuto()" class="easyui-linkbutton" iconCls="icon-search">搜索</a>
-			<a href="javascript:void(0)" onclick="resetart()" class="easyui-linkbutton" iconCls="icon-undo">重置</a>
+			<a href="javascript:void(0)" onclick="searchArtAuto()" class="easyui-linkbutton" iconCls="icon-search">搜索</a>
+			<a href="javascript:void(0)" onclick="resetArt()" class="easyui-linkbutton" iconCls="icon-undo">重置</a>
 			<div style="float: right; margin-right: 20px;">
 			<a href="javascript:void(0)" onclick="addArtNews()" class="easyui-linkbutton"  iconCls="icon-add">添加</a>
-			<a href="javascript:void(0)" onclick="delart()" class="easyui-linkbutton" iconCls="icon-remove">删除</a>
+			<a href="javascript:void(0)" onclick="delArt()" class="easyui-linkbutton" iconCls="icon-remove">删除</a>
 		</div>
 		</div>
 		
 	</div>
 	<!----------------- 搜索模块end ----------------->
 <script type="text/javascript">
-var ue=UE.getEditor('artEditor');//实例化编辑器
+var artUe=UE.getEditor('artEditor');//实例化编辑器
 //显示模块开始---------------------------------------
-var partid="1004,1005,1006,1007,1008";
+var artPartid="1004,1005,1006,1007,1008";
 var artObj;
 artObj=$('#art_data').datagrid({
-	url:'backs/getartByPage',
+	url:'backs/getArtByPage',
 	queryParams: {
-		partid: partid
+		partid: artPartid
 	},
 	fitColumns:true,
 	fit:true,
@@ -100,9 +100,9 @@ artObj=$('#art_data').datagrid({
 		{field:'weight',title:'文章权重',width:300,align:'center',sortable:true,
 			formatter: function(value,row,index){
 				var str="";
-				str+=value+"<a href='javascript:setartWeight("+row.nid+",1,"+row.weight+","+row.partid+")' style='margin-left:4px;'>置顶</a>"+
-				"<a href='javascript:setartWeight("+row.nid+",2,"+row.weight+","+row.partid+")' style='margin-left:4px;'>上移</a>"+
-				"<a href='javascript:setartWeight("+row.nid+",3,"+row.weight+","+row.partid+")' style='margin-left:4px;'>下移</a>"
+				str+=value+"<a href='javascript:setArtWeight("+row.nid+",1,"+row.weight+","+row.partid+")' style='margin-left:4px;'>置顶</a>"+
+				"<a href='javascript:setArtWeight("+row.nid+",2,"+row.weight+","+row.partid+")' style='margin-left:4px;'>上移</a>"+
+				"<a href='javascript:setArtWeight("+row.nid+",3,"+row.weight+","+row.partid+")' style='margin-left:4px;'>下移</a>"
 				return str; 
 			}	
 		},
@@ -150,7 +150,7 @@ function addArtNews(){
 		
 }
 //绑定提交按钮
-$('#submitartBtn').bind('click', function(){  
+$('#submitArtBtn').bind('click', function(){  
         
         var artNtnameAdd=$('#artNtnameAdd').combobox('getValue');
         var artPartNameAdd=$('#artPartNameAdd').combobox('getValue');
@@ -162,7 +162,7 @@ $('#submitartBtn').bind('click', function(){
         	$.messager.alert('提示信息','您填入的信息不合法或者填写不完整...','error');
         	return;
         }
-        $.post("backs/addArtNews",{usid:$("#usid").val(),author:artAuthorAdd,flag:artFlagAdd,weight:artWeightAdd,content:ue.getContent(),nitid:artNtnameAdd,partid:artPartNameAdd,title:artTitleAdd},function(data){
+        $.post("backs/addArtNews",{usid:$("#usid").val(),author:artAuthorAdd,flag:artFlagAdd,weight:artWeightAdd,content:artUe.getContent(),nitid:artNtnameAdd,partid:artPartNameAdd,title:artTitleAdd},function(data){
         	if(data){
         		$.messager.show({
         			title:'成功提示',
@@ -171,8 +171,8 @@ $('#submitartBtn').bind('click', function(){
         			showType:'slide'
         		});
         		$('#art_data').datagrid({
-        			url:'backs/getartByPage',
-        			queryParams: { partid: partid }});
+        			url:'backs/getArtByPage',
+        			queryParams: { partid: artPartid }});
         		
         	}else{
         		$.messager.alert('错误信息','上传出错，请重新上传...','error');
@@ -180,7 +180,7 @@ $('#submitartBtn').bind('click', function(){
         },"json");
 }); 
 //更新权重
-function setartWeight(nid,val,weight,partid){
+function setArtWeight(nid,val,weight,partid){
 	if(val==1){//置顶
 		$.post("backs/setTop",{nid:nid,weight:weight,partid:partid},function(data){
 			messageHandler("置顶",data);
@@ -200,19 +200,19 @@ function setartWeight(nid,val,weight,partid){
 	}
 }
 //搜索
-function searchartAuto(){
+function searchArtAuto(){
 	 var data1=$('#artData1').datebox('getValue');
 	var data2=$('#artData2').datebox('getValue');
 	var ntname=$('#artNtname').combobox('getValue');
 	var partName=$('#artPartName').combobox('getValue');
 	var title=$('#artTitle').textbox('getValue');
-	partid=partName;
-	console.info(data1+data2+ntname+partName+title+partid); 
+	artPartid=partName;
+	console.info(data1+data2+ntname+partName+title+artPartid); 
 
 
 } 
 //重置搜索表单
-function resetart(){
+function resetArt(){
 	$('#artData1').datebox('setValue','');
 	$('#artData2').datebox('setValue','');
 	$('#artNtname').combobox('setValue','-1');
@@ -231,8 +231,8 @@ function messageHandler(action,data){
 			showType:'slide'
 		});
 		$('#art_data').datagrid({
-			url:'backs/getartByPage',
-			queryParams: { partid: partid }});
+			url:'backs/getArtByPage',
+			queryParams: { partid: artPartid }});
 	}else if(data==2){
 		$.messager.alert('温馨提示','所属版块'+action+'已到最佳','info');
 	}else{
@@ -240,7 +240,7 @@ function messageHandler(action,data){
 	}
 }
 //删除选中
-function delart(){
+function delArt(){
 	var rows=artObj.datagrid("getSelections");
 		if(rows!=undefined&&rows!=''){
 			$.messager.confirm('信息确认','您确定要删除选定的数据吗?', function(r){
@@ -260,8 +260,8 @@ function delart(){
 						});
 						rows=undefined;
 						$('#art_data').datagrid({
-							url:'backs/getartByPage',
-							queryParams: { partid: partid }});//刷新表格
+							url:'backs/getArtByPage',
+							queryParams: { partid: artPartid }});//刷新表格
 					}else{
 						$.messager.alert('失败提示','删除失败','error');
 					}
@@ -285,8 +285,8 @@ function delart(){
 			}else{
 				$.messager.alert('错误提示','更新失败...','error');
 				$('#art_data').datagrid({
-					url:'backs/getartByPage',
-					queryParams: { partid: partid }});
+					url:'backs/getArtByPage',
+					queryParams: { partid: artPartid }});
 			}
 		},"json");
 	}
@@ -303,8 +303,8 @@ function delart(){
 			}else{
 				$.messager.alert('错误提示','更新失败...','error');
 				$('#art_data').datagrid({
-					url:'backs/getartByPage',
-					queryParams: { partid: partid }});
+					url:'backs/getArtByPage',
+					queryParams: { partid: artPartid }});
 			}
 		},"json");
 	}

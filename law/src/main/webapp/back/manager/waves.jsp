@@ -13,6 +13,22 @@
 			<option value="1001">校园动态</option>
 			<option value="1002">社会聚焦</option>
 			<option value="1003">新闻调查</option>
+			<option value="1004">法治视频</option>
+			<option value="1005">法治动漫</option>
+			<option value="1006">法治摄影</option>
+			<option value="1007">法治书画</option>
+			<option value="1008">法治小说</option>
+			<option value="1009">法治名人</option>
+			<option value="1010">法治故事</option>
+			<option value="1011">法治典故</option>
+			<option value="1012">法治名言</option>
+			<option value="1013">法治灯谜</option>
+			<option value="1014">法治楹联</option>
+			<option value="1015">法治时评</option>
+			<option value="1016">以案释法</option>
+			<option value="1017">名人说法</option>
+			<option value="1018">法规检索</option>
+			<option value="1019">法理探索</option>
 		</select>
 		标题：<input id="wavesTitleAdd" class="easyui-textbox" type="text" name="title" />
 		作者：<input id="wavesAuthorAdd" class="easyui-textbox" type="text" name="title" />
@@ -42,10 +58,26 @@
 			</select>
 			所属版块: 
 			<select id="wavesPartName" class="easyui-combobox" panelHeight="auto" style="width:100px">
-				<option value='1001,1002,1003'>全部</option>
+				<option value='-1'>全部</option>
 				<option value="1001">校园动态</option>
 				<option value="1002">社会聚焦</option>
 				<option value="1003">新闻调查</option>
+				<option value="1004">法治视频</option>
+				<option value="1005">法治动漫</option>
+				<option value="1006">法治摄影</option>
+				<option value="1007">法治书画</option>
+				<option value="1008">法治小说</option>
+				<option value="1009">法治名人</option>
+				<option value="1010">法治故事</option>
+				<option value="1011">法治典故</option>
+				<option value="1012">法治名言</option>
+				<option value="1013">法治灯谜</option>
+				<option value="1014">法治楹联</option>
+				<option value="1015">法治时评</option>
+				<option value="1016">以案释法</option>
+				<option value="1017">名人说法</option>
+				<option value="1018">法规检索</option>
+				<option value="1019">法理探索</option>
 			</select>
 			按标题：<input id="wavesTitle" class="easyui-textbox" type="text" name="title" />
 			<a href="javascript:void(0)" onclick="searchWavesAuto()" class="easyui-linkbutton" iconCls="icon-search">搜索</a>
@@ -59,15 +91,12 @@
 	</div>
 	<!----------------- 搜索模块end ----------------->
 <script type="text/javascript">
-var ue=UE.getEditor('wavesEditor');//实例化编辑器
+var wavesUe=UE.getEditor('wavesEditor');//实例化编辑器
 //显示模块开始---------------------------------------
-var partid="1001,1002,1003";
+var partid;
 var wavesObj;
 wavesObj=$('#waves_data').datagrid({
 	url:'backs/getWavesByPage',
-	queryParams: {
-		partid: partid
-	},
 	fitColumns:true,
 	fit:true,
 	striped:true,
@@ -158,7 +187,7 @@ $('#submitWavesBtn').bind('click', function(){
         	$.messager.alert('提示信息','您填入的信息不合法或者填写不完整...','error');
         	return;
         }
-        $.post("backs/addWavsNews",{usid:$("#usid").val(),author:wavesAuthorAdd,flag:wavesFlagAdd,weight:WavesWeightAdd,content:ue.getContent(),nitid:wavesNtnameAdd,partid:wavesPartNameAdd,title:wavesTitleAdd},function(data){
+        $.post("backs/addWavsNews",{usid:$("#usid").val(),author:wavesAuthorAdd,flag:wavesFlagAdd,weight:WavesWeightAdd,content:wavesUe.getContent(),nitid:wavesNtnameAdd,partid:wavesPartNameAdd,title:wavesTitleAdd},function(data){
         	if(data){
         		$.messager.show({
         			title:'成功提示',
@@ -167,9 +196,8 @@ $('#submitWavesBtn').bind('click', function(){
         			showType:'slide'
         		});
         		$('#waves_data').datagrid({
-        			url:'backs/getWavesByPage',
-        			queryParams: { partid: partid }});
-        		
+        			url:'backs/getWavesByPage'});
+        		wavesUe.setContent("");
         	}else{
         		$.messager.alert('错误信息','上传出错，请重新上传...','error');
         	}
@@ -197,15 +225,14 @@ function setWavesWeight(nid,val,weight,partid){
 }
 //搜索
 function searchWavesAuto(){
-	 var data1=$('#wavesData1').datebox('getValue');
-	var data2=$('#wavesData2').datebox('getValue');
+	 var time1=$('#wavesData1').datebox('getValue');
+	var time2=$('#wavesData2').datebox('getValue');
 	var ntname=$('#wavesNtname').combobox('getValue');
 	var partName=$('#wavesPartName').combobox('getValue');
 	var title=$('#wavesTitle').textbox('getValue');
 	partid=partName;
-	console.info(data1+data2+ntname+partName+title+partid); 
-
-
+		$('#waves_data').datagrid('load',{time1:time1,time2:time2,nitid:ntname,partid:partName,title:title});  
+	
 } 
 //重置搜索表单
 function resetWaves(){
@@ -213,7 +240,7 @@ function resetWaves(){
 	$('#wavesData2').datebox('setValue','');
 	$('#wavesNtname').combobox('setValue','-1');
 	$('#wavesNtname').combobox('setText','全部');
-	$('#wavesPartName').combobox('setValue','1001，1002，1003');
+	$('#wavesPartName').combobox('setValue','-1');
 	$('#wavesPartName').combobox('setText','全部');
 	$('#wavesTitle').textbox('setValue','');
 }

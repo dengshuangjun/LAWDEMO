@@ -23,7 +23,7 @@ public interface BackDataMapper {
 
 	LawContentPage getWavesByPage(LawContentPage lawContentPage);
 
-	int findMaxWeightFromNews(int partid,int nid);
+	Integer findMaxWeightFromNews(int partid,int nid);
 
 	int setTop(int nid, int weight);
 

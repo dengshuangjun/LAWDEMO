@@ -83,14 +83,18 @@ public class BackDataHandler {
 		}
 		return false;
 	}
-	@RequestMapping(value={"getWavesByPage","getartByPage"})
+	@RequestMapping(value={"getWavesByPage"})
 	@ResponseBody
 	public Map<String,Object> getWavesByPage(LawContentPage lawContentPage){
+		System.out.println(lawContentPage);
 		lawContentPage=backDataService.getWavesByPage(lawContentPage);
 		Map<String,Object> map=new HashMap<String, Object>();
 		if(lawContentPage!=null){
 			map.put("total", lawContentPage.getTotal());
 			map.put("rows", lawContentPage.getLawContents());
+		}else{
+			map.put("total",0);
+			map.put("rows",null);
 		}
 		return map;
 	}
@@ -101,8 +105,8 @@ public class BackDataHandler {
 	@RequestMapping("setTop")
 	@ResponseBody
 	public int setTop(int nid,int weight,int partid){
-		int maxWeight=backDataService.findMaxWeightFromNews(partid,nid);
-		if(maxWeight!=0){
+		Integer maxWeight=backDataService.findMaxWeightFromNews(partid,nid);
+		if(maxWeight!=null){
 			if(maxWeight<weight){
 				return 2;
 			}else if(backDataService.setTop(nid,maxWeight+1)>0){
@@ -122,8 +126,8 @@ public class BackDataHandler {
 	@RequestMapping("setUp")
 	@ResponseBody
 	public int setUp(int nid,int weight,int partid){
-		int maxWeight=backDataService.findMaxWeightFromNews(partid,nid);
-		if(maxWeight!=0){
+		Integer maxWeight=backDataService.findMaxWeightFromNews(partid,nid);
+		if(maxWeight!=null){
 			if(maxWeight<weight){
 				return 2;
 			}else if(backDataService.setTop(nid,weight+1)>0){
@@ -188,9 +192,11 @@ public class BackDataHandler {
 		list.add(0,et1);
 		return list;
 	}
-	@RequestMapping(value={"addWavsNews","addArtNews"})
+	@RequestMapping(value={"addWavsNews"})
 	@ResponseBody
 	public boolean addWavsNews(AddContent addContent){
 		return backDataService.addWavsNews(addContent);
 	}
+	
+	 
 }
