@@ -18,24 +18,6 @@
 <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
 <script src="../js/time.js"></script>
 <script type="text/javascript" src="../js/readDevCss.js"></script>
-<style>
-.content .right span {
-	text-align: center;
-	font-weight: bold;
-	font-size: 22px;
-	width: 866px;
-	display: block;
-	margin: 40px 0 40px 280px;
-	color: #00F;
-}
-
-.content .right .ppp {
-	margin: 0 50px;
-	font-size: 16px;
-	line-height: 30px;
-	text-indent: 2em;
-}
-</style>
 </head>
 <body>
 	<div id="top">
@@ -137,10 +119,7 @@
 			</div>
 			<div class="right">
 				<div class="ppp">
-					<c:forEach items="${shownew }" var="item">
-						<span>${item.title }</span>
-						<p>${item.content }</p>
-					</c:forEach>
+					<h1 class="showWisInfo"></h1>
 				</div>
 			</div>
 		</div>
