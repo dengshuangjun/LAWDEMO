@@ -6,7 +6,6 @@ $(function() {
 	var usid=$("#usname").val();
 	$.post("../../fronts/getArtDataByPage",{pageSize:2,pageNum:1,partid:partId,usid:usid},function(data){
 		disWisdom(data.basicContents);
-		alert(data.total);
 		$(".tcdPageCode").createPage({
 			pageCount : data.total,
 			current : 1,

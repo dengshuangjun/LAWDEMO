@@ -20,10 +20,10 @@ public class FrontDataHandler {
 	@ResponseBody
 	public BasicContentPage getArtDataByPage(Integer pageSize,Integer pageNum,Integer partid,Integer usid){
 		BasicContentPage result = frontDataService.getArtDataByPage(pageSize,pageNum,partid,usid);
+		//System.out.println(result);
 		if(result!=null){
 			if(result.getTotal()%pageSize==0){
 				result.setTotal(result.getTotal()/pageSize);
-				System.out.println(result.getTotal()/pageSize+"开发的骄傲");
 			}else{
 				result.setTotal(((int)(result.getTotal()/pageSize))+1);
 			}
