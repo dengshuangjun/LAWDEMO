@@ -92,4 +92,25 @@ public class UEditorHandler {
 			}
 			return null;
 	 }
+	 @RequestMapping(value="/config",params="action=uploadfile")
+	 @ResponseBody
+	 public VideoData uploadFile(MultipartFile upfile){
+		 if(upfile!=null){
+			 String paths=System.getProperty("evan.webapp");//获取项目在服务器中的绝对路径，我的图片是存在服务器的webapp的pics目录下面，这个需要一个配置
+				paths=paths.substring(0,paths.lastIndexOf("\\"));
+				String realPath =paths.substring(0,paths.lastIndexOf("\\"))+ "\\pics";//获取到服务器存放文件的目录
+				String picName ="../pics/"+picSting()+new Date().getTime()+
+						upfile.getOriginalFilename().substring(upfile.getOriginalFilename().indexOf("."));
+				//图片名字的生成，getOriginalFilename获取上传图片的名字然后截取后缀
+				try {
+					FileUtils.copyInputStreamToFile(upfile.getInputStream(), new File(realPath, picName));
+					String original = upfile.getOriginalFilename();//原名字
+					VideoData videoData=new VideoData(original.substring(0,original.indexOf(".")),picName,picName,upfile.getSize(),original.substring(original.indexOf(".")+1),"SUCCESS");
+					return videoData;
+				} catch (IOException e) {
+					return null;
+				}
+			}
+			return null;
+	 }
 }
