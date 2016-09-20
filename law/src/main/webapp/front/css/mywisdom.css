@@ -41,10 +41,22 @@
  	margin:0 30px;
  }
  
-  .model .content .right .newstory .newstory_li{
+  .model .content .right .newstory .newstory_main{
  	width:100%;
  	margin:0 10px;
  }
+
+.model .content .right .newstory .newstory_main_title{
+		word-break:break-all;
+}
+
+.model .content .right .newstory .newstory_main_link{
+		font-size:14px;display: inline-block;margin-top:60px;
+}
+
+.model .content .right .newstory .newstory_main_cont{
+		color: #999;font-size:14px;text-indent: 2em;font-family: "华文楷体";
+}
 
 /*特效*/
 	div.flip-3d { 

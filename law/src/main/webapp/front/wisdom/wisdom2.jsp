@@ -129,73 +129,73 @@
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 						<li class="lii">
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
-								<em class="story_main_title"><a href="">故事名字故事名（12）</a></em>
+								<em class="story_main_title"><a href="">故事名字（12）</a></em>
 								<a href="" class="story_main_link">[详情]</a>
-								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的我是有故事（24）...</em>
+								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
 					</ul>

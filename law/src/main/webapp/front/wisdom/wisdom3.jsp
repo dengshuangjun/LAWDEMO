@@ -118,7 +118,7 @@
 				<div class="head"></div>
 				<div class="newstory">
 					<span>名人说法</span>
-					<div class="newstory_li">
+					<div class="newstory_main">
 						<div class="jq22-container">
 							<header class="jq22-header bgcolor-11">
 								<h4>"如果得不到老百姓的信仰，得不到老百姓的尊重，那么再完美的法律也是无济于事的。"</h4>
@@ -128,10 +128,10 @@
 							  	<figure>
 							    	<img src="../images/1.jpg" alt="">
 								    <figcaption>
-								    	<p style="word-break:break-all;">我有一头小毛炉我从来都不骑</p>
-								    	<a href="" style="font-size:14px;display: inline-block;margin-top:60px;">[详细]</a>
+								    	<p class="newstory_main_title">我有一头小毛炉我从来都不骑</p>
+								    	<a class="newstory_main_link" href="">[详细]</a>
 								    </figcaption>
-								    <p style="color: #999;font-size:14px;text-indent: 2em;">我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的...</p>
+								    <p class="newstory_main_cont">我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的...</p>
 								</figure>
 							</div>
 							  
