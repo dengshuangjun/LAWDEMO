@@ -122,6 +122,9 @@
 				</div>
 			</div>
 			<div class="right">
+			<input id="partId" type="hidden" value="1015"/>
+				<input id="usname" type="hidden" value="${fuser.usid}"/>
+				
 				<div class="head"></div>
 				<div class="newss">
 					<span>法治故事(每页九个)</span>

@@ -115,6 +115,9 @@
 				</div>
 			</div>
 			<div class="right">
+				<input id="partId" type="hidden" value="1015"/>
+				<input id="usname" type="hidden" value="${fuser.usid}"/>
+			
 				<div class="head"></div>
 				<div class="newstory">
 					<span>名人说法</span>
