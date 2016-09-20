@@ -71,7 +71,7 @@
 	text-decoration:underline;
 }
 .model .content .right{
-	min-height:850px;
+	min-height:650px;
 	border:1px solid #eee;
 	width:866px;
 	border-radius:5px;
@@ -109,6 +109,20 @@
 	display: block;
 	margin: 40px 0 60px 0;
 	color: #00F; */
+}
+.model .content .right .new ul{
+	padding:50px;
+}
+.model .content .right .new ul li{
+	padding:2px;
+	font-family:serif;
+	font-size:20px;
+	width:80%;
+	float:left;
+	border-bottom: 1px solid white;
+}
+.model .content .right .new ul li:hover{
+	border-bottom: 1px solid navy;
 }
 .model .content .right .news ul li{
 	width:390px;
@@ -169,6 +183,5 @@
 }
 .model .content .right .pageDiv{
 	display:block;
-	padding-top:40px;
 	clear:both;
 }

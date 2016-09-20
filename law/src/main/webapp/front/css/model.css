@@ -16,13 +16,13 @@
 
 .model .content {
 	width: 1200px;
-	height: 950px;
+	min-height: 700px;
 }
 
 .model .content .left {
 	border: 1px solid #eee;
 	width: 300px;
-	height: 850px;
+	min-height: 650px;
 	border-radius: 5px;
 	float: left;
 	margin-right: 30px;
@@ -84,7 +84,7 @@
 }
 
 .model .content .right .newstory{
-	width:850px;
+	width:866px;
 	float:left;
 }
 
@@ -360,7 +360,7 @@
 	padding: 30px;
 }
 
-.model .content .right .newstory ul {
+/* .model .content .right .newstory ul {
 	margin: 20px 20px 0 80px;
 }
 .model .content .right .newstory ul li {
@@ -422,4 +422,4 @@
 .model .content .right .newstorys ul .duiright {
 	float: right;
 	margin-top: -35px;
-}
+} */

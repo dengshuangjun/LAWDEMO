@@ -24,7 +24,7 @@ public class BackDataHandler {
 	@Autowired
 	private BackDataService backDataService;
 	
-	@RequestMapping("getTypeByPage")
+	@RequestMapping("/getTypeByPage")
 	@ResponseBody
 	public Map<String,Object> getTypeByPage(TypePage typePage){
 		typePage=backDataService.getTypeByPage(typePage);
@@ -39,12 +39,12 @@ public class BackDataHandler {
 		
 		return map;
 	}
-	@RequestMapping("addTypes")
+	@RequestMapping("/addTypes")
 	@ResponseBody
 	public boolean addTypes(Type type){
 		return backDataService.addTypes(type);
 	}
-	@RequestMapping("delTypes")
+	@RequestMapping("/delTypes")
 	@ResponseBody
 	public boolean delTypes(String ntid){
 		
@@ -89,7 +89,7 @@ public class BackDataHandler {
 		}
 		return false;
 	}
-	@RequestMapping(value={"getWavesByPage"})
+	@RequestMapping(value={"/getWavesByPage"})
 	@ResponseBody
 	public Map<String,Object> getWavesByPage(LawContentPage lawContentPage){
 		lawContentPage=backDataService.getWavesByPage(lawContentPage);
@@ -107,7 +107,7 @@ public class BackDataHandler {
 	 * 置顶
 	 * @return
 	 */
-	@RequestMapping("setTop")
+	@RequestMapping("/setTop")
 	@ResponseBody
 	public int setTop(int nid,int weight,int partid){
 		Integer maxWeight=backDataService.findMaxWeightFromNews(partid,nid);
@@ -128,7 +128,7 @@ public class BackDataHandler {
 	 * 上移
 	 * @return
 	 */
-	@RequestMapping("setUp")
+	@RequestMapping("/setUp")
 	@ResponseBody
 	public int setUp(int nid,int weight,int partid){
 		Integer maxWeight=backDataService.findMaxWeightFromNews(partid,nid);
@@ -147,7 +147,7 @@ public class BackDataHandler {
 	/**
 	 * 下移
 	 */
-	@RequestMapping("setDown")
+	@RequestMapping("/setDown")
 	@ResponseBody
 	public int setDown(int nid){
 		try {
@@ -161,7 +161,7 @@ public class BackDataHandler {
 		}
 		
 	}
-	@RequestMapping("delNews")
+	@RequestMapping("/delNews")
 	@ResponseBody
 	public boolean delNews(String nids){
 		return backDataService.delNews(nids);
@@ -171,7 +171,7 @@ public class BackDataHandler {
 	 * 更改新闻非注册人员是否可见
 	 * @return
 	 */
-	@RequestMapping("changeNewsFlag")
+	@RequestMapping("/changeNewsFlag")
 	@ResponseBody
 	public boolean changeNewsFlag(String flag,int nid){
 		return backDataService.changeNewsFlag(flag,nid);
@@ -182,12 +182,12 @@ public class BackDataHandler {
 	 * @param nid
 	 * @return
 	 */
-	@RequestMapping("changeNewsStatus")
+	@RequestMapping("/changeNewsStatus")
 	@ResponseBody
 	public boolean changeNewsStatus(String status,int nid){
 		return backDataService.changeNewsStatus(status,nid);
 	}
-	@RequestMapping("getNewsTypeName")
+	@RequestMapping("/getNewsTypeName")
 	@ResponseBody
 	public List<EasyType> getNewsTypeName(){
 		List<EasyType> list = backDataService.getNewsTypeName();
@@ -197,7 +197,7 @@ public class BackDataHandler {
 		list.add(0,et1);
 		return list;
 	}
-	@RequestMapping(value={"addWavsNews"})
+	@RequestMapping(value={"/addWavsNews"})
 	@ResponseBody
 	public boolean addWavsNews(AddContent addContent){
 		return backDataService.addWavsNews(addContent);

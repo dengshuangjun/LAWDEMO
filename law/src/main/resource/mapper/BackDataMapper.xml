@@ -84,7 +84,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         		nitid=#{nitid}
         	</if>
         </trim>
-        )order by ndate desc,ndate asc)a where #{page}*#{rows}>=rownum
+        )order by weight desc,ndate desc)a where #{page}*#{rows}>=rownum
         <if test="partid!=null">
          and partid in 
         <foreach collection="partid" open="(" close=")" separator="," item="partid">#{partid}</foreach></if>) nn where rn>(#{page}-1)*#{rows}
@@ -117,4 +117,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into news(nid,nitid,partid,title,ndate,weight,content,author,flag,usid) values(
 			seq_news_id.nextval,#{nitid},#{partid},#{title},sysdate,#{weight},#{content},#{author},#{flag},#{usid})
 	</insert>
+	
 </mapper>

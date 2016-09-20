@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用映射接口的方式， 命名空间的值必须与映射接口的全限定名一致 -->
+<mapper namespace="com.yc.law.mapper.FrontDataMapper">
+	<resultMap type="BasicContentPage" id="BasicContentPageMap">
+		<id column="total" property="total"/>
+		<collection property="basicContents" column="nid" ofType="BasicContent">
+			<id column="nid" property="nid"/>
+			<result column="title" property="title"/>
+			<result column="ndate" property="ndate"/>
+		</collection>
+	</resultMap>
+
+	<select id="getArtDataByPage" parameterType="int" resultMap="BasicContentPageMap">
+		select (select count(1) from news where status='Y' 
+		<if test="#{3}==null">
+		and flag='N'
+		</if>
+		 and  partid=#{2}) total,nn.* from(select rownum rn, a.* from(select nid,title,ndate from news where status='Y' 
+		<if test="#{3}==null">
+		and flag='N'
+		</if>
+		and  partid=#{2}
+		order by weight desc,ndate desc)a where #{0}*#{1}>=rownum ) nn where rn>(#{1}-1)*#{0}
+	</select>
+	<select id="getMoreNewsContent" resultType="LawContent" parameterType="int">
+		select title,to_char(ndate,'yyyy-MM-dd') ndate,author,views,content from news where nid=#{0}
+	</select>
+</mapper>

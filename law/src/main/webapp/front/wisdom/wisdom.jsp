@@ -123,17 +123,39 @@
 				</div>
 			</div>
 			<div class="right">
+				<input id="partId" type="hidden" value="1015"/>
+				<input id="usname" type="hidden" value="${fuser.usid}"/>
+				
 				<div class="head"></div>
 				<div class="content">
-					<img class="img" src="../images/f.png" /> <span class="span"></span>
+					<img class="img" src="../images/f.png" />
 					<div class="tcon">
-						<div class="tcons1">
-							
+						<div class="tcons_main">
+							<p class="tcons_title"><a href="javascript:void(0)" onclick="shownew(1027)">我是标题</a></p>
+							<div class="tcons_main_bott">
+								<img class="tcons_main_pic" src="../images/icon.jpg" />
+								<p class="tcons_cont" >我是内容、我是内容、我是内容、我是内容、我是内容、我是内容、我是内容
+								我是内容、我是内容、我是内容、我是内容、我是内容、我是内容、我是内容
+								我是内容、我是内容、我是内容、我是内容、我是内容、我是内容、我是内容
+								我是内容、我是内容、我是内容、我是内容、我是内容、我是内容(135字)...
+								<a href="javascript:void(0)" onclick="shownew()">[点击查看详细]</a>
+								</p>
+							</div>
+						</div>
+						
+						<div class="tcons_main">
+							<p class="tcons_title"><a href="javascript:void(0)" onclick="shownew()">我是标题</a></p>
+							<div class="tcons_main_bott">
+								<img class="tcons_main_pic" src="../images/icon.jpg" />
+								<p class="tcons_cont" >我是内容、我是内容、我是内容、我是内容、我是内容、我是内容、我是内容
+								我是内容、我是内容、我是内容、我是内容、我是内容、我是内容、我是内容
+								我是内容、我是内容、我是内容、我是内容、我是内容、我是内容、我是内容
+								我是内容、我是内容、我是内容、我是内容、我是内容、我是内容(135字)...
+								<a href="javascript:void(0)" onclick="shownew()">[点击查看详细]</a>
+								</p>
+							</div>
 						</div>
 					</div>
-					<div class="nright">
-						
-					</div> 
 				</div>
 				<div class="pageDiv"><div class="tcdPageCode"></div></div>
 			</div>

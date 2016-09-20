@@ -16,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="../css/pageCode.css" />
 <link rel="stylesheet" type="text/css" href="../css/defaultindex.css" id="devIndexCss">
 <link rel="stylesheet" type="text/css" href="../css/artDefualt.css" id="devArtCss">
+<link rel="stylesheet" type="text/css" href="../css/mywisdom.css">
 <script src="../js/time.js"></script>
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="../js/readDevCss.js"></script>
@@ -117,8 +118,40 @@
 				<div class="head"></div>
 				<div class="newstory">
 					<span>名人说法</span>
-					<ul class="newtoy">
-					</ul>
+					<div class="newstory_main">
+						<div class="jq22-container">
+							<header class="jq22-header bgcolor-11">
+								<h4>"如果得不到老百姓的信仰，得不到老百姓的尊重，那么再完美的法律也是无济于事的。"</h4>
+							</header>
+							<div class="jq22-content">
+							<div class="flip-3d">
+							  	<figure>
+							    	<img src="../images/1.jpg" alt="">
+								    <figcaption>
+								    	<p class="newstory_main_title">我有一头小毛炉我从来都不骑</p>
+								    	<a class="newstory_main_link" href="javascript:void(0)" onclick="shownew()">[详细]</a>
+								    </figcaption>
+								    <p class="newstory_main_cont">我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的...</p>
+								</figure>
+							</div>
+							  
+							<div class="flip-3d">
+							  <figure>
+							    <img src="../images/2.jpg" alt="">
+							    <figcaption>Irrigation rats</figcaption>
+							  </figure>
+							</div>
+						
+							<div class="flip-3d">
+							  <figure>
+							    <img src="../images/3.jpg" alt="">
+							    <figcaption>Rabbit</figcaption>
+							  </figure>
+							</div>
+							</div>
+							
+						</div>
+					</div>
 				</div>
 				<div class="pageDiv">
 					<div class="tcdPageCode"></div>
