@@ -36,9 +36,14 @@ $(function(){
 				current:1,
 				backFn:function(p){
 					str="";
+					var count=0;
 					$.post("../../wave/findWaveNewsByPage",{pageNo:p,pageSize:"12",partId : law_Partid},function(data){
 						$.each(data,function(index,item){
+							count++;
 							str+='<li><a href="../../wave/findWaveContentByNid?nid='+item.nid+'">'+item.title+'</a></li>';
+							if(count%6==0){
+								str+='<li class="space"></li>';
+							}
 						});
 						$(".new_left ul").html( $(str) );
 					},"json");
@@ -47,12 +52,3 @@ $(function(){
 		}
 	},"json");
 })
-
-//查看详细新闻
-/*function newsMore(nid){
-	$.post("../../wave/findWaveContentByNid",{nid:nid},function(data){
-		if(data){
-			window.open("news.jsp?nid="+nid,"_blank");
-		}
-	},"json");
-}*/
