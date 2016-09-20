@@ -1,25 +1,15 @@
 
 .right .content  .img {
 	width: 800px;
-	padding: 30px;
+	padding: 30px 30px 0 30px;
 	height: 200px;
 	display: block;
 }
 
 .right .content {
-	min-height:850px;
+	min-height:640px;
 	width: 900px;
 	height: auto;
-}
-
-.right .content .span {
-	width: 800px;
-	display: block;
-	height: 30px;
-	opacity: 0.4;
-	position: relative;
-	top: -90px;
-	left: 30px;
 }
 
 .right .content  img {
@@ -42,45 +32,58 @@
 }
 
 .right .content .tcon {
-	width: 560px;
+	width: 800px;
+	float: left;
+	height:520px;
+	margin:0 30px;
+}
+
+.right .content .tcons_main{
+	width:100%;
+	height:120px;
+	margin-top:10px;
+}
+
+.right .content .tcons_title{
+	font-size:16px;
+	height:20%;
+}
+
+.right .content .tcons_title a{
+	color:#666666;
+}
+
+.right .content .tcons_title a:hover{
+	text-decoration:underline;
+	color:#000;
+}
+
+.right .content .tcons_main_bott{
+	margin-top:10px;
+	height:75%;
+	color:#999;
+}
+
+.right .content .tcons_main_pic{
+	width:15%;
+	height:100%;
 	float: left;
 }
 
-.right .content .tcons1, .right .content .tcons2 {
-	margin: 10px;
-	padding-left: 20px;
-	padding-bottom: 10px;
-	float: left;
-}
-
-.right .content .tcons2 {
-	display: block;
-	position: relative;
-	top: 40px;
-}
-
-.right .content .nright {
-	width: 260px;
-	float: left;
-	margin-left: 10px;
-}
-
-.right .content .nright img {
-	width: 90px;
-	height: 100px;
-}
-
-.right .content .nright em {
-	font-size: 14px;
-	color: blue;
-}
-
-.right .content .nright span {
-	font-size: 13px;
-	line-height: 20px;
-	color: #999;
-}
-
-.right .content .nright a {
-	margin: 10px 20px;
-}
+.right .content .tcons_cont{
+ 	width:82%;
+ 	height:100%;
+ 	float: left;
+ 	margin-left:20px;
+ 	margin-top:8px;
+ 	text-indent: 2em;
+ }
+ 
+ .right .content .tcons_cont a{
+ 	color:#666666;
+ }
+ 
+ .right .content .tcons_cont a:hover{
+ 	color:red;
+ 	text-decoration: underline;
+ }
