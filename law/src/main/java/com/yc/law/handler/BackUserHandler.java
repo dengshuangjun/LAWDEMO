@@ -49,6 +49,13 @@ public class BackUserHandler {
 			user.setUpwd(Encrypt.md5AndSha("admin"));
 			backUserService.insertInitAdmin(user);
 		}
+		String paths=System.getProperty("evan.webapp");//获取项目在服务器中的绝对路径，我的图片是存在服务器的webapp的pics目录下面，这个需要一个配置
+		paths=paths.substring(0,paths.lastIndexOf("\\"));
+		String realPath =paths.substring(0,paths.lastIndexOf("\\"))+ "\\pics";//获取到服务器存放文件的目录
+		File file=new File(realPath);
+		if(!file.exists()){
+			file.mkdir();
+		}
 	}
 	
 	
