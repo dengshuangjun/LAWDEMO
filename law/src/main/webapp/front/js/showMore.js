@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
 	findLawMark();
 });
 function findLawMark() {
@@ -14,7 +14,7 @@ function findLawMark() {
 		});
 		$("#right_low_left ul").html($(str));
 	}, "json");
-}
+}*/
 // 获取地址栏参数
 function GetQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -24,7 +24,7 @@ function GetQueryString(name) {
 	return null;
 }
 // 点击评论
-function Comment() {
+/*function Comment() {
 	$.post("../../ArtServlet", {
 		op : "Comment",
 		params : (toJsonStr($("#formID").serialize()))
@@ -34,7 +34,7 @@ function Comment() {
 			$("#formID textarea").val("");
 		}
 	});
-}
+}*/
 function toJsonStr(str) {
 	return str = "{\"" + str.replace(/=/g, "\":\"").replace(/&/g, "\",\"")
 			+ "\"}";

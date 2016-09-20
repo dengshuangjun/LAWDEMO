@@ -110,6 +110,20 @@
 	margin: 40px 0 60px 0;
 	color: #00F; */
 }
+.model .content .right .new ul{
+	padding:50px;
+}
+.model .content .right .new ul li{
+	padding:2px;
+	font-family:serif;
+	font-size:20px;
+	width:80%;
+	float:left;
+	border-bottom: 1px solid white;
+}
+.model .content .right .new ul li:hover{
+	border-bottom: 1px solid navy;
+}
 .model .content .right .news ul li{
 	width:390px;
 	float:left;

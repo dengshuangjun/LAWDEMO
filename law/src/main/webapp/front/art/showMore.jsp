@@ -39,12 +39,16 @@
 		<div id="top_page">
 			<span>今天是<span id="nowtime"></span></span>
 			<ul>
-				<li><c:if test="${user.usid!=null&&user.usid!=''}">
-						<a>欢迎！！</a>： <a>${user.usname }</a>|
-				</c:if> <c:if test="${user.usid==null||user.usid==''}">
-						<li><a href="../load.html">登录</a>| <a href="../submit.html">免费注册</a>|
-						
-					</c:if> <a href="../UserCenter.jsp">会员中心</a>| <a href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a>
+				<li>
+				<c:if test="${fuser.usid!=null&&fuser.usid!=''}">
+						<a>欢迎您</a>: <a>${fuser.usname }</a>|
+						<a href="javascript:void(0)" onclick="zhuxiao()">注销</a>|
+				</c:if> 
+				<c:if test="${fuser.usid==null||fuser.usid==''}">
+						<li><a href="load.html">登录</a>| <a href="submit.html">免费注册</a>|
+				</c:if> 
+					<a href="UserCenter.jsp">会员中心</a>| <a href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a>
+
 				</li>
 			</ul>
 		</div>
@@ -134,31 +138,14 @@
 			</div>
 			<div class="right">
 				<div class="right_top">
-					<c:set value="${moreContent}" var="content" />
-					<span>${content.title}</span>
-					<p style="margin: 3px 100px">发表日期:${content.ndate}&nbsp;&nbsp;&nbsp;作者：${content.author}&nbsp;&nbsp;&nbsp;浏览次数：${content.views}</p>
-					<hr />
+					<c:set value="" var="content" />
+					<span></span>
+					<p style="margin: 3px 100px">发表日期:&nbsp;&nbsp;&nbsp;作者：&nbsp;&nbsp;&nbsp;浏览次数：</p>
+					<hr width="90%;"/>
 					<div class="ppp">
-
-						<c:if test="${content.vediopath!=''&&content.vediopath!=null}">
-							<video width="600" height="300" controls autoplay>
-								<source src="../../${content.vediopath}" type="video/mp4">
-								<object data="" width="600" height="300" type="application/x-shockwave-flash" data="fallback.swf"></object>
-							</video>
-							<hr />
-						</c:if>
-						<c:if
-							test="${content.picpath!=null&&content.picpath!=''&&content.picpath!='vedio'}">
-							<c:forEach items="${content.picpath.split(',') }" var="item"
-								varStatus="s">
-								<li><img src="../../${item} " width="600" 
-									alt="${content.title}"></li>
-							</c:forEach>
-						</c:if>
-						<p>${content.content}</p>
-						<br />
-						<br />
-						<br />
+						
+						
+						aaaaaa
 					</div>
 				</div>
 				<div class="right_low">
@@ -168,15 +155,14 @@
 					</div>
 					<div class="right_low_right">
 						<form id="formID">
-							<input type="hidden" name="usid" value="${user.usid}"/>
-							 <input type="hidden" name="nid" value="${moreContent.nid }"/>
+							<input type="hidden" name="usid" value="${fuser.usid}"/>
 							<textarea  name="mcontent"
 								style="width: 260px; height: 100px; margin-left: 20px; margin-top: 20px; resize: none;"></textarea>
 							<br /> <label style="margin-left: 20px; margin-top: 20px;">还可以输入150个字</label>
-							<c:if test="${user.usid==null||user.usid==''}">
+							<c:if test="${fuser.usid==null||fuser.usid==''}">
 								<button style="margin-left: 180px; margin-top: 20px;" disabled="disabled">请登录后发表评论</button>
 							</c:if>
-							<c:if test="${user.usid!=null&&user.usid!=''}">
+							<c:if test="${fuser.usid!=null&&fuser.usid!=''}">
 								<input type="button" onclick="javascript:Comment();" style="margin-left: 180px; margin-top: 20px; padding: 3px; background-color:#ffff;" value="发表评论">
 							</c:if>
 						</form>
