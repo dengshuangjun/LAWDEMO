@@ -24,7 +24,7 @@
 			<ul>
 				<li><a href="../load.html">登录</a>| <a href="../submit.html">注册</a>| <a
 					href="../UserCenter.jsp">会员中心</a>| <a
-					href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a></li>
+					href="###">收藏本站</a>| <a href="###">关于我们</a></li>
 			</ul>
 		</div>
 	</div>
@@ -120,31 +120,14 @@
 				<div class="new_box">
 					<span>法治灯谜 </span>
 					<ul class="secretul" id="newsContent">
-						
-						 <li><a href="#">杨绛家与法律有关的那些事儿 </a><b> 2016-05-30 </b></li>
-						<li><a href="#">摊事儿</a><b>  2016-05-26 </b></li>
-						<li><a href="#">路上拾遗</a><b>  2016-05-25 </b> </li>
-						<li><a href="#">伪装者</a><b>  2016-05-09 </b> </li>
-						<li><a href="#">神学家圣·奥古斯丁</a><b>  2016-05-04 </b></li>
-						<i></i>
-						<li><a href="#">杨绛家与法律有关的那些事儿 </a><b> 2016-05-30 </b></li>
-						<li><a href="#">摊事儿</a><b>  2016-05-26 </b></li>
-						<li><a href="#">路上拾遗</a><b>  2016-05-25 </b> </li>
-						<li><a href="#">伪装者</a><b>  2016-05-09 </b> </li>
-						<li><a href="#">神学家圣·奥古斯丁</a><b>  2016-05-04 </b></li>
-						<i></i>
-						<li><a href="#">杨绛家与法律有关的那些事儿 </a><b> 2016-05-30 </b></li>
-						<li><a href="#">摊事儿</a><b>  2016-05-26 </b></li>
-						<li><a href="#">路上拾遗</a><b>  2016-05-25 </b> </li>
-						<li><a href="#">伪装者</a><b>  2016-05-09 </b> </li>
-						<li><a href="#">神学家圣·奥古斯丁</a><b>  2016-05-04 </b></li>
-						<i></i>
-						<li><a href="#">杨绛家与法律有关的那些事儿 </a><b> 2016-05-30 </b></li>
-						<li><a href="#">摊事儿</a><b>  2016-05-26 </b></li>
-						<li><a href="#">路上拾遗</a><b>  2016-05-25 </b> </li>
-						<li><a href="#">伪装者</a><b>  2016-05-09 </b> </li>
-						<li><a href="#">神学家圣·奥古斯丁</a><b>  2016-05-04 </b></li>
-						<i></i> 
+						<c:set var="count" value="0"></c:set>
+						<c:forEach items="${secret}" var="item">
+							<li><a href="#">${item.content} </a><b>${item.ndate} </b></li>
+							<c:set var="count" value="${count+1 }"></c:set>
+		                	<c:if test="${count%5==0 }">
+		                			<i></i>
+		                	</c:if>
+						</c:forEach>
 					</ul> 
 				</div>
 				<div class="tcdPageCode"></div>

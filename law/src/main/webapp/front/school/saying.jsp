@@ -24,7 +24,7 @@
 			<ul>
 			<li><a href="../load.html">登录</a>| <a href="../submit.html">注册</a>| <a
 					href="../UserCenter.jsp">会员中心</a>| <a
-					href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a></li>
+					href="###">收藏本站</a>| <a href="###">关于我们</a></li>
 			</ul>
 		</div>
 	</div>
@@ -120,27 +120,9 @@
 				<div class="newstory">
 					<span>法治名言</span>
 					<ul id="newsContent">
-						
-						<li><p>法律解释者都希望在法律中寻获其时代问题的答案。</p><b>——拉伦茨</b>
-						</li>
-						<li><p>立法者三句修改的话，全部藏书就会变成废纸。</p><b>——基希曼</b>
-						</li>
-						<li><p>法律的真理知识，来自于立法者的教养。</p><b>——黑格尔</b>
-						</li>
-						<li><p>解释法律系法律学之开端，并为其基础，系一项科学性工作，但又为一种艺术。</p><b>——萨维尼</b>
-						</li>
-						<li><p>法律是人类为了共同利益，由人类智慧遵循人类经验所做出的最后成果。</p><b>——强森</b>
-						</li>
-						<li><p>法治意味着，政府除非实施众所周知的规则，否则不得对个人实施强制。</p><b>——哈耶克</b>
-						</li>
-						<li><p>没有信仰的法律将退化成为僵死的教条，而没有法律的信仰将蜕变成为狂信。</p><b>——伯尔曼</b>
-						</li>
-						<li><p>法治概念的最高层次是一种信念，相信一切法律的基础，应该是对于人的价值的尊重。</p><b>　——陈弘毅</b>
-						</li>
-						<li><p>法律职业的社会地位是一个民族文明的标志。<p><b>——费尔德</b>
-						</li>
-						<li><p>尽量大可能把关于他们的意志的知识散布在人民中间，这就是立法机关的义务。</p><b>——边沁</b></li>
-						
+						<c:forEach items="${saying}" var="item">
+							<li><p>${item.content }</p><b>——${item.title}</b></li>
+						</c:forEach>
 					</ul>
 				</div>
 					<div class="tcdPageCode"></div>

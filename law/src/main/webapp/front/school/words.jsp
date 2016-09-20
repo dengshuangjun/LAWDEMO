@@ -24,7 +24,7 @@
 			<ul>
 				<li><a href="../load.html">登录</a>| <a href="../submit.html">注册</a>| <a
 					href="../UserCenter.jsp">会员中心</a>| <a
-					href="###">收藏本站</a>| <a href="javascript:void(0)" onclick="aboutUs()">关于我们</a></li>
+					href="###">收藏本站</a>| <a href="###">关于我们</a></li>
 			</ul>
 		</div>
 	</div>
@@ -119,37 +119,13 @@
 				<div class="head"></div>
 				<div class="newstorys">
 					<span>法治楹联</span>
-					 <ul>
-						<li>以莲立品捋清流，骨未许侵，纵陷浊污仍抱洁；</li>
-						<li class="duiright">效竹为官持直节，身何妨瘦，如经风雨更凌云。（刘光和）</li>
-						<i></i>
-						<li>聚天下民心，扶正黜邪，万卷华章书法治
-						</li>
-						<li class="duiright">融岭南风韵，飞红舞碧，九州春色证人和（刘松山）
-						</li>
-						<i></i>
-						<li>大法总无私　官民平等
-						</li>
-						<li class="duiright">中庸犹有准　道德至尊（杨秀荣）
-						</li>
-						<i></i>
-						<li>肩正义 止纷争 缔盛世之太平
-						</li>
-						<li class="duiright">袖清风 明赏罚 浩乾坤之正气</li>
-						<i></i>
-						<li>法者国之大事也攸乎社稷安危不可不公
-						</li>
-						<li class="duiright">判者司之重责也关之民间疾苦不可不明</li>
-						<i></i>
-						<li>以莲立品捋清流，骨未许侵，纵陷浊污仍抱洁；</li>
-						<li class="duiright">效竹为官持直节，身何妨瘦，如经风雨更凌云。（刘光和）</li>
-						<i></i>
-						<li>聚天下民心，扶正黜邪，万卷华章书法治
-						</li>
-						<li class="duiright">融岭南风韵，飞红舞碧，九州春色证人和（刘松山）
-						</li>
-						<i></i>
-					</ul>
+					<div>
+						<ul id="newsContent">
+						<c:forEach items="${words}" var="item">
+								<li>${item.content }</li>
+						</c:forEach>
+						</ul>
+					</div>
 				</div>
 				<div class="tcdPageCode"></div>
 			</div>
@@ -158,7 +134,6 @@
 	<div class="content_footer">
 	<span>友情链接</span>
 	<table id="friConnEight"></table>
-</div>
 </div>
 <!--E=内容-->
 <!--S=友情链接-->

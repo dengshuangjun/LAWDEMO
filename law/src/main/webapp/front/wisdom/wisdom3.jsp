@@ -129,7 +129,7 @@
 							    	<img src="../images/1.jpg" alt="">
 								    <figcaption>
 								    	<p class="newstory_main_title">我有一头小毛炉我从来都不骑</p>
-								    	<a class="newstory_main_link" href="">[详细]</a>
+								    	<a class="newstory_main_link" href="javascript:void(0)" onclick="shownew()">[详细]</a>
 								    </figcaption>
 								    <p class="newstory_main_cont">我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的我是测试的...</p>
 								</figure>

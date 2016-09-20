@@ -130,7 +130,7 @@
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
 								<em class="story_main_title"><a href="">故事名字（12）</a></em>
-								<a href="" class="story_main_link">[详情]</a>
+								<a href="javascript:void(0)" onclick="shownew()" class="story_main_link">[详情]</a>
 								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
@@ -138,7 +138,7 @@
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
 								<em class="story_main_title"><a href="">故事名字（12）</a></em>
-								<a href="" class="story_main_link">[详情]</a>
+								<a href="javascript:void(0)" onclick="shownew()" class="story_main_link">[详情]</a>
 								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
@@ -146,7 +146,7 @@
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
 								<em class="story_main_title"><a href="">故事名字（12）</a></em>
-								<a href="" class="story_main_link">[详情]</a>
+								<a href="javascript:void(0)" onclick="shownew()" class="story_main_link">[详情]</a>
 								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>
@@ -154,7 +154,7 @@
 							<div class="story_main">
 								<img  class="story_main_pic" src="../images/r_icon.png" style="width:15px;height:15px;"/>
 								<em class="story_main_title"><a href="">故事名字（12）</a></em>
-								<a href="" class="story_main_link">[详情]</a>
+								<a href="javascript:void(0)" onclick="shownew()" class="story_main_link">[详情]</a>
 								<em class="story_main_con">我是有故事的我是有故事的我是有故事的我是有故事的（24）...</em>
 							</div>
 						</li>

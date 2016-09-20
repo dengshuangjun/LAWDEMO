@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用映射接口的方式， 命名空间的值必须与映射接口的全限定名一致 -->
+<mapper namespace="com.yc.law.mapper.SchoolNewsMapper">
+	<select id="getSchoolNewsTotal" parameterType="int" resultType="int">
+		select count(*) from news where partid=#{partId}
+	</select>
+	
+	 <select id="findSchoolNewsByPages" resultType="LawContent">
+		select * from(select rownum rn,a.* from(select nid,nitid,title,to_char(ndate,'yyyy-MM-dd') ndate,weight,flag,picpath,content from news where partid=#{0} and flag='Y' order by weight ) a where  #{1} * #{2}  >= rownum ) where rn> (#{1} - 1) * #{2}
+	</select>
+	
+	<!--
+	<select id="findWaveContentByNid" parameterType="int" resultType="LawContent">
+		select nid,nitid,partid,title,to_char(ndate,'yyyy-MM-dd') ndate,weight,content,picpath,vediopath,voicepath,views,author,news_file,status from news where nid=#{nid} and status='Y'
+	</select> -->
+</mapper>
