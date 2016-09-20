@@ -23,6 +23,7 @@ public class FrontDataHandler {
 		if(result!=null){
 			if(result.getTotal()%pageSize==0){
 				result.setTotal(result.getTotal()/pageSize);
+				System.out.println(result.getTotal()/pageSize+"开发的骄傲");
 			}else{
 				result.setTotal(((int)(result.getTotal()/pageSize))+1);
 			}

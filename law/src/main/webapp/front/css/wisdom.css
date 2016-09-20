@@ -85,3 +85,25 @@
  	color:red;
  	text-decoration: underline;
  }
+ 
+ /*个人中心*/
+ .content .right{
+ 	margin:0 auto;
+ }
+ 
+  .content .right .ppp{
+ 	width:80%;
+ 	text-align: center;
+ }
+
+ .content .right .ppp .showWisInfoTime{
+ 	margin-top:8px;
+ }
+ 
+  .content .right .showWisCon {
+  	width:90%;
+ 	text-align:left;
+ 	text-indent: 2em;
+ 	margin:20px auto;
+ 	line-height: 20px;
+  }
