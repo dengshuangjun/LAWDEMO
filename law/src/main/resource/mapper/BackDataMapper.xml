@@ -117,4 +117,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into news(nid,nitid,partid,title,ndate,weight,content,author,flag,usid) values(
 			seq_news_id.nextval,#{nitid},#{partid},#{title},sysdate,#{weight},#{content},#{author},#{flag},#{usid})
 	</insert>
+	
 </mapper>

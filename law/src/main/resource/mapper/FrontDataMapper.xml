@@ -21,4 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		and  partid=#{2}
 		order by weight desc,ndate desc)a where #{0}*#{1}>=rownum ) nn where rn>(#{1}-1)*#{0}
 	</select>
+	<select id="getMoreNewsContent" resultType="LawContent" parameterType="int">
+		select title,to_char(ndate,'yyyy-MM-dd') ndate,author,views,content from news where nid=#{0}
+	</select>
 </mapper>

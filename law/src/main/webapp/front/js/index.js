@@ -20,7 +20,7 @@ $(function() {
 function disArt(data){
 	var str="";
 	 $.each(data,function(index,item){
-		 str+="<a href='showMore.jsp?nid="+item.nid+"'><li>"+item.title+"</li></a><span>"+item.ndate+"</span>";
+		 str+="<a href='showMore.jsp?nid="+item.nid+"'><li>"+item.title+"<span style='float:right;'>"+item.ndate+"</span></li></a>";
 		 if(index!=0&&index%5==0){
 			 str+="<br/>";
 		 }

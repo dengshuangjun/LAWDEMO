@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.law.entity.BasicContentPage;
+import com.yc.law.entity.LawContent;
 import com.yc.law.service.FrontDataService;
 
 @Controller
@@ -27,5 +28,16 @@ public class FrontDataHandler {
 			}
 		}
 		return result;
+	}
+	/**
+	 * 查看内容详情
+	 * @param nid
+	 * @return
+	 */
+	@RequestMapping("/getMoreNewsContent")
+	@ResponseBody
+	public LawContent getMoreNewsContent(int nid){
+		return 	frontDataService.getMoreNewsContent(nid);
+
 	}
 }

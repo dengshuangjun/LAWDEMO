@@ -138,15 +138,7 @@
 			</div>
 			<div class="right">
 				<div class="right_top">
-					<c:set value="" var="content" />
-					<span></span>
-					<p style="margin: 3px 100px">发表日期:&nbsp;&nbsp;&nbsp;作者：&nbsp;&nbsp;&nbsp;浏览次数：</p>
-					<hr width="90%;"/>
-					<div class="ppp">
-						
-						
-						aaaaaa
-					</div>
+					
 				</div>
 				<div class="right_low">
 					<div class="right_low_left" id="right_low_left">
